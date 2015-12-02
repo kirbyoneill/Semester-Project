@@ -7,7 +7,8 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.LeverInc.Project.EliteBrowserController">
    <children>
-      <TextField fx:id="tfAddressBar" layoutX="226.0" layoutY="25.0" promptText="Enter html address here" />
-      <WebView fx:id="webView" layoutX="200.0" layoutY="92.0" prefHeight="200.0" prefWidth="200.0" />
+      <TextField fx:id="tfAddressBar" layoutX="226.0" layoutY="25.0" onKeyReleased="#onGoEntered" prefHeight="25.0" prefWidth="528.0" promptText="Enter html address here" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="15.0" />
+      <WebView fx:id="webView" layoutX="200.0" layoutY="92.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="50.0" />
+      <Button fx:id="btnGo" layoutX="534.0" layoutY="15.0" mnemonicParsing="false" onMouseClicked="#onGoClicked" prefHeight="25.0" prefWidth="61.0" text="Go!" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0" />
    </children>
 </AnchorPane>
