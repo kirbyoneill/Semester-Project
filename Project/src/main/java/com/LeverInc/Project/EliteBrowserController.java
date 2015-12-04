@@ -19,6 +19,12 @@ public class EliteBrowserController extends Region{
     @FXML
     private Button btnGo;
 
+    @FXML
+    private MenuBar MenuBar;
+
+    @FXML
+    private MenuItem close;
+
     public void initialize(){
     WebEngine webEngine = webView.getEngine();
     tfAddressBar.setText(address);
@@ -26,17 +32,26 @@ public class EliteBrowserController extends Region{
     }
     
     @FXML
-    void onGoEntered(KeyEvent event) {
-    	address = tfAddressBar.getText();
-    	if(event.getCode() == KeyCode.ENTER) {
+    void onEnterPress(KeyEvent event) {
+    	if(event.getCode() == KeyCode.ENTER){
+    		address = tfAddressBar.getText();
     		WebEngine webEngine = webView.getEngine();
-    	    webEngine.load(address);
+    		webEngine.load(addressCorrection());
     	}
     }
 
-    @FXML
-    void onGoClicked(ActionEvent event) {
 
+    @FXML
+    void browserClose(ActionEvent event) {
+    	System.exit(0);
     }
 
+    public String addressCorrection(){
+    	if(address.substring(0, 7).equals("http://")){
+    		return address;
+    	} else{
+    		address = "http://" + address;
+    		return address;
+    	}
+    }
 }
