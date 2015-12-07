@@ -61,8 +61,8 @@ public class EliteBrowserController extends Region{
     }
 
     @FXML
-    void openInstance(ActionEvent event) throws IOException {
-    	Stage stage = new Stage();
+    void start(Stage stage) throws IOException {
+    	stage = new Stage();
     	Parent parent = FXMLLoader.load(getClass().getResource("EliteBrowser.fxml"));
 		Scene scene = new Scene(parent);
 		stage.setTitle("Elite Browser");
