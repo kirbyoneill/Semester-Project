@@ -1,8 +1,9 @@
 package com.LeverInc.Project;
 
-import java.io.IOException;
-import javafx.stage.Stage;
-
+// REQ #3
 public interface Launch {
-	void start(Stage s) throws IOException;
+	
+	public static void main(String[] args) {
+	}
+	
 }
